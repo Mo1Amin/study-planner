@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظم المواعيد والدراسة</title>
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <h3 class="loading-text">جاري التحميل...</h3>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__pulse" href="#">
+                <i class="fas fa-calendar-alt me-2"></i>منظمي
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">جدولي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tasks">المهام</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats">الإحصائيات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings">الإعدادات</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">نظم وقتك بذكاء</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">منصة متكاملة لإدارة المواعيد والجدول الدراسي مع تذكيرات ذكية وتحليلات زمنية</p>
+                    <div class="d-flex gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#schedule" class="btn btn-primary btn-lg px-4 py-2 rounded-pill">ابدأ الآن</a>
+                        <a href="#features" class="btn btn-outline-light btn-lg px-4 py-2 rounded-pill">المميزات</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="https://via.placeholder.com/500x400" alt="Hero Image" class="img-fluid rounded-4 shadow-lg animate__animated animate__zoomIn animate__delay-1s">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">مميزات المنصة</h2>
+                <p class="text-muted">كل ما تحتاجه لتنظيم وقتك بشكل فعال</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon bg-primary bg-gradient mb-4">
+                                <i class="fas fa-bell text-white"></i>
+                            </div>
+                            <h4 class="mb-3">تذكيرات ذكية</h4>
+                            <p class="text-muted">تذكيرات قبل المواعيد المهمة بوقت كافٍ مع إمكانية التكرار</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon bg-success bg-gradient mb-4">
+                                <i class="fas fa-chart-pie text-white"></i>
+                            </div>
+                            <h4 class="mb-3">تحليلات زمنية</h4>
+                            <p class="text-muted">تقارير وإحصائيات عن كيفية استغلال وقتك وأنماط الدراسة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon bg-warning bg-gradient mb-4">
+                                <i class="fas fa-sync-alt text-white"></i>
+                            </div>
+                            <h4 class="mb-3">مزامنة بين الأجهزة</h4>
+                            <p class="text-muted">احصل على جدولك في أي وقت ومن أي جهاز مع مزامنة فورية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">جدول المواعيد</h2>
+                <p class="text-muted">نظم مواعيدك وأوقات دراستك بسهولة</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">إضافة موعد جديد</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="appointmentForm">
+                                <div class="mb-3"> 
+                                    <label for="eventTitle" class="form-label">عنوان الموعد</label>
+                                    <input type="text" class="form-control" id="eventTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label">التاريخ</label>
+                                    <input type="date" class="form-control" id="eventDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventTime" class="form-label">الوقت</label>
+                                    <input type="time" class="form-control" id="eventTime" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventType" class="form-label">نوع الموعد</label>
+                                    <select class="form-select" id="eventType">
+                                        <option value="study">دراسة</option>
+                                        <option value="work">عمل</option>
+                                        <option value="personal">شخصي</option>
+                                        <option value="other">آخر</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="eventNotes" class="form-label">ملاحظات</label>
+                                    <textarea class="form-control" id="eventNotes" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">حفظ الموعد</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">تقويم المواعيد</h5>
+                                <div>
+                                    <button id="prevMonth" class="btn btn-sm btn-light me-2"><i class="fas fa-chevron-right"></i></button>
+                                    <span id="currentMonth" class="fw-bold">شهر 2023</span>
+                                    <button id="nextMonth" class="btn btn-sm btn-light ms-2"><i class="fas fa-chevron-left"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="calendar" class="calendar">
+                                <!-- Calendar will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">قائمة المواعيد القادمة</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="upcomingEvents" class="upcoming-events">
+                                <!-- Upcoming events will be loaded here -->
+                                <div class="text-center py-4">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">جاري التحميل...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasks Section -->
+    <section id="tasks" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">إدارة المهام الدراسية</h2>
+                <p class="text-muted">تابع مهامك وواجباتك الدراسية بسهولة</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">إضافة مهمة جديدة</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="taskForm">
+                                <div class="mb-3">
+                                    <label for="taskTitle" class="form-label">عنوان المهمة</label>
+                                    <input type="text" class="form-control" id="taskTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskSubject" class="form-label">المادة الدراسية</label>
+                                    <input type="text" class="form-control" id="taskSubject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskDueDate" class="form-label">موعد التسليم</label>
+                                    <input type="date" class="form-control" id="taskDueDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskPriority" class="form-label">الأولوية</label>
+                                    <select class="form-select" id="taskPriority">
+                                        <option value="low">منخفضة</option>
+                                        <option value="medium" selected>متوسطة</option>
+                                        <option value="high">عالية</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taskNotes" class="form-label">تفاصيل المهمة</label>
+                                    <textarea class="form-control" id="taskNotes" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">إضافة المهمة</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-success text-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">قائمة المهام</h5>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="filterTasks" data-bs-toggle="dropdown">
+                                        تصفية المهام
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="all">الكل</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="high">عالية الأولوية</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="medium">متوسطة الأولوية</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="low">منخفضة الأولوية</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="completed">مكتملة</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#" data-filter="pending">قيد الانتظار</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="taskList" class="task-list">
+                                <!-- Tasks will be loaded here -->
+                                <div class="text-center py-4">
+                                    <div class="spinner-border text-success" role="status">
+                                        <span class="visually-hidden">جاري التحميل...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">إحصائيات وأداء</h2>
+                <p class="text-muted">تحليلات عن أدائك الدراسي واستغلال الوقت</p>
+            </div>
+            
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card stat-card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="stat-icon bg-primary bg-gradient mb-3">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <h3 class="stat-value mb-1" id="totalStudyHours">0</h3>
+                            <p class="stat-label text-muted mb-0">ساعة دراسة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card stat-card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="stat-icon bg-success bg-gradient mb-3">
+                                <i class="fas fa-check-circle text-white"></i>
+                            </div>
+                            <h3 class="stat-value mb-1" id="completedTasks">0</h3>
+                            <p class="stat-label text-muted mb-0">مهمة مكتملة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card stat-card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="stat-icon bg-warning bg-gradient mb-3">
+                                <i class="fas fa-exclamation-circle text-white"></i>
+                            </div>
+                            <h3 class="stat-value mb-1" id="pendingTasks">0</h3>
+                            <p class="stat-label text-muted mb-0">مهمة معلقة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card stat-card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="stat-icon bg-info bg-gradient mb-3">
+                                <i class="fas fa-percentage text-white"></i>
+                            </div>
+                            <h3 class="stat-value mb-1" id="productivityScore">0%</h3>
+                            <p class="stat-label text-muted mb-0">معدل الإنتاجية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">توزيع ساعات الدراسة</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="studyHoursChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">إنجاز المهام حسب الأولوية</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="tasksPriorityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settings" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">الإعدادات</h2>
+                <p class="text-muted">خصّص المنصة حسب احتياجاتك</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-warning text-white">
+                            <h5 class="mb-0">تخصيص الإعدادات</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="settingsForm">
+                                <div class="mb-4">
+                                    <h6 class="mb-3">إعدادات المظهر</h6>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="themeColor" class="form-label">لون السمة</label>
+                                            <select class="form-select" id="themeColor">
+                                                <option value="blue">أزرق</option>
+                                                <option value="green">أخضر</option>
+                                                <option value="purple">بنفسجي</option>
+                                                <option value="red">أحمر</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="darkMode" class="form-label">وضع الظلام</label>
+                                            <select class="form-select" id="darkMode">
+                                                <option value="auto">تلقائي</option>
+                                                <option value="light">فاتح</option>
+                                                <option value="dark">مظلم</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h6 class="mb-3">إعدادات التذكيرات</h6>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="reminderTime" class="form-label">وقت التذكير المسبق</label>
+                                            <select class="form-select" id="reminderTime">
+                                                <option value="5">5 دقائق</option>
+                                                <option value="15" selected>15 دقيقة</option>
+                                                <option value="30">30 دقيقة</option>
+                                                <option value="60">ساعة واحدة</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="notificationSound" class="form-label">صوت التنبيه</label>
+                                            <select class="form-select" id="notificationSound">
+                                                <option value="default">افتراضي</option>
+                                                <option value="chime">جرس</option>
+                                                <option value="alert">تنبيه</option>
+                                                <option value="none">بلا صوت</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h6 class="mb-3">إعدادات الدراسة</h6>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="studySessionLength" class="form-label">مدة جلسة الدراسة (دقائق)</label>
+                                            <input type="number" class="form-control" id="studySessionLength" value="45" min="15" max="120">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="breakLength" class="form-label">مدة الاستراحة (دقائق)</label>
+                                            <input type="number" class="form-control" id="breakLength" value="10" min="5" max="30">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-warning px-4">حفظ الإعدادات</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4"><i class="fas fa-calendar-alt me-2"></i>Eng.Mo</h5>
+                    <p>منصة متكاملة لتنظيم المواعيد والجدول الدراسي مع تحليلات ذكية وتذكيرات مخصصة لمساعدتك على تحقيق أقصى استفادة من وقتك.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">الرئيسية</a></li>
+                        <li class="mb-2"><a href="#schedule" class="text-white text-decoration-none">جدولي</a></li>
+                        <li class="mb-2"><a href="#tasks" class="text-white text-decoration-none">المهام</a></li>
+                        <li class="mb-2"><a href="#stats" class="text-white text-decoration-none">الإحصائيات</a></li>
+                        <li><a href="#settings" class="text-white text-decoration-none">الإعدادات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">تواصل معنا</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>القاهره،جمهووريه مصر العربيه</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+201017348133</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> m.ahmed2280@su.edu.eg</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">النشرة البريدية</h5>
+                    <p>اشترك ليصلك كل جديد عن التحديثات والمميزات الجديدة.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
+                            <button class="btn btn-primary" type="button">اشترك</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2025 نانو. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">تصميم وتطوير <a href="#" class="text-white text-decoration-none">م.محمد أمين</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top animate__animated animate__fadeInUp">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Modal for Event Details -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalTitle">تفاصيل الموعد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="eventModalBody">
+                    <!-- Event details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-danger" id="deleteEventBtn">حذف الموعد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Task Details -->
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskModalTitle">تفاصيل المهمة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="taskModalBody">
+                    <!-- Task details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-success" id="completeTaskBtn">تم الإنجاز</button>
+                    <button type="button" class="btn btn-danger" id="deleteTaskBtn">حذف المهمة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-hijri/2.1.2/moment-hijri.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
