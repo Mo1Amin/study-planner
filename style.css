@@ -1059,3 +1059,8 @@ body.dark-mode ::-webkit-datetime-edit-ampm-field {
 .form-time:focus:after {
     width: 80%;
 }
+
+/* Keep entrance animations (AOS) from widening the page on phones. */
+html, body {
+    overflow-x: hidden;
+}
