@@ -36,7 +36,7 @@ npm run build
 npm run preview
 ```
 
-The build is written to `dist/`. Upload its contents to a static host, GitHub Pages, or a cPanel document root. No PHP runtime or database is needed for the current single-device planner. Direct multi-device sync would need a backend and authenticated accounts; this version uses an explicit backup file instead.
+The build is written to `dist/`. It includes the cPanel `.htaccess` rules from `public/`. Upload the contents of `dist/` to a static host, GitHub Pages, or a cPanel document root; see the [cPanel upload guide](docs/cpanel-deployment.md). No PHP runtime or database is needed for the current single-device planner. Direct multi-device sync would need a backend and authenticated accounts; this version uses an explicit backup file instead.
 
 ## How the planner is organized
 
