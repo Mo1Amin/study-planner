@@ -1,0 +1,15 @@
+{
+  "name": "munazzami-study-planner",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Arabic, local-first study planning workspace",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

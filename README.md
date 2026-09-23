@@ -1,37 +1,73 @@
 <div align="center">
 
-# 📅 Munazzami · منظمي
+# Munazzami · منظمي
 
-**A study and appointment planner: calendar, tasks and progress charts, all in the browser.**
+**A thoughtful Arabic-first planner for study time, tasks, weekly sessions, and connected ideas.**
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-open-0d6efd?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mo1amin.github.io/study-planner/)
-![Bootstrap](https://img.shields.io/badge/Bootstrap%205-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-<img src="docs/preview.png" alt="Munazzami study planner on desktop and phone" width="100%">
+[![Frontend](https://img.shields.io/badge/HTML%20%2F%20CSS%20%2F%20JavaScript-Vite-316c61?style=flat-square)](https://vite.dev/)
+[![Storage](https://img.shields.io/badge/storage-local--first-577d99?style=flat-square)](#your-data)
 
 </div>
 
-## ✨ Features
+Munazzami turns study intentions into a weekly plan that fits the hours a student actually has. It is right-to-left, responsive, and designed to work without an account or an application server.
 
-- **Schedule:** a month calendar; add appointments and see what is on each day
-- **Tasks:** add tasks with a priority, filter them, mark them done or delete them
-- **Statistics:** study hours per day (bar chart) and a doughnut chart of your tasks, built with Chart.js
-- **Settings:** dark mode, theme colour and reminder time, saved in `localStorage`
-- **Polish:** Arabic right-to-left layout, SweetAlert2 dialogs and scroll animations (AOS)
+## What you can do
 
-## 🧰 Built with
+- **Set up subjects and tasks.** Record a due date, priority, expected study time, and the next step.
+- **Plan a realistic week.** Generate study blocks around existing appointments, daily limits, study hours, and task deadlines. Tasks that do not fit are reported instead of silently overbooking the day.
+- **Track real study time.** Start, pause, resume, and finish a focus timer. Only completed study sessions count toward progress.
+- **See the links.** Arrange subjects, tasks, and custom ideas on a dotted canvas, connect them with arrows, and keep those relationships for later.
+- **Review progress.** See completed study minutes by day and subject, task completion, and weekly goals.
+- **Keep your data.** Changes save to IndexedDB. A local-storage fallback and JSON export/import provide a portable backup.
 
-HTML · CSS · JavaScript · Bootstrap 5 (RTL) · Chart.js · Moment.js · SweetAlert2 · AOS · Font Awesome
+## Run it
 
-## ▶️ Run it
-
-No build step. Open `index.html` in a browser, or serve the folder:
+Use Node.js 20.19+ or 22.12+.
 
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
+
+Create a static production build and preview it locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+The build is written to `dist/`. Upload its contents to a static host, GitHub Pages, or a cPanel document root. No PHP runtime or database is needed for the current single-device planner. Direct multi-device sync would need a backend and authenticated accounts; this version uses an explicit backup file instead.
+
+## How the planner is organized
+
+```text
+src/
+  data/planner-store.js   IndexedDB, fallback storage, backup validation
+  domain/date.js          local-date and display helpers
+  domain/planning.js      deadline and capacity-aware study planning
+  ui/primitives.js        shared accessible UI elements
+  ui/views.js             dashboard, schedule, tasks, subjects, map, reports
+  main.js                 routes, forms, timers, and state updates
+  styles.css              design tokens and responsive RTL layouts
+```
+
+## Your data
+
+The planner is intentionally local-first: there are no account credentials, analytics calls, or remote API keys in the app. Your browser's storage can still be cleared, so export a backup before changing browsers or devices.
+
+## Design guidance
+
+This repository includes Anthropic's [`frontend-design` skill](.agents/skills/frontend-design/SKILL.md), including its license, and a project-specific token and interaction guide in [`docs/design-system.md`](docs/design-system.md). The interface uses a cool paper-and-ink palette, a measured Arabic type scale, clear priority colors, visible keyboard focus, and reduced-motion support.
+
+## Stack
+
+HTML5 · CSS3 · JavaScript ES modules · Vite · Git
+
+## Skills demonstrated
+
+Semantic HTML, responsive RTL design, accessible interactions, modular JavaScript, IndexedDB persistence, portable JSON backups, and a production-ready Vite build.
+
+The project does not add PHP, Vue/Nuxt, or a remote API because its current product scope does not need a server or framework.
 
 ---
 
