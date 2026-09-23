@@ -35,6 +35,14 @@ export function icon(name, size = 18) {
   return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${iconPaths[name] ?? iconPaths.spark}</svg>`;
 }
 
+export function daffaLogo(size = 34, className = '', label = 'دَفّة') {
+  return `<svg class="daffa-logo ${className}" width="${size}" height="${size}" viewBox="0 0 24 24" role="img" aria-label="${escapeHtml(label)}">
+    <circle class="daffa-logo__dot" cx="4.6" cy="18" r="1.9" />
+    <path class="daffa-logo__route" d="M7.1 18h6.2c4.3 0 6.9-2.25 6.9-6s-2.6-6-6.9-6h-2.4" />
+    <path class="daffa-logo__arrow" d="M10.7 2.4 16 6l-5.3 3.6V7.35H8.9V4.65h1.8Z" />
+  </svg>`;
+}
+
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (character) => ({
     '&': '&amp;',

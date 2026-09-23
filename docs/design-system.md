@@ -1,6 +1,6 @@
-# Munazzami design system
+# Daffa design system
 
-Munazzami is a calm study desk for Arabic-speaking students. The interface should feel like a dependable instrument: quiet enough to focus, but clear about deadlines, time, and completed work.
+Daffa is a calm planning desk for Arabic-speaking people. The interface should feel like a dependable instrument: quiet enough to focus, but clear about deadlines, time, and completed work.
 
 ## Visual direction
 

@@ -1,6 +1,6 @@
 # Upload to cPanel
 
-Munazzami is a static site. It does not need PHP, MySQL, a database setup, or environment variables.
+Daffa is a static site. It does not need PHP, MySQL, a database setup, or environment variables.
 
 ## Prepare the files
 
@@ -15,7 +15,7 @@ The production site is generated in `dist/`. Vite copies `public/.htaccess` into
 
 1. Open **File Manager** and choose the document root for the domain or subdomain, commonly `public_html/`.
 2. Enable **Show Hidden Files (dotfiles)** in File Manager settings so `.htaccess` is visible.
-3. Upload and extract the provided `munazzami-cpanel.zip` into that document root, or upload the contents of `dist/` directly.
+3. Upload and extract the provided `daffa-cpanel.zip` into that document root, or upload the contents of `dist/` directly.
 4. Confirm that `index.html`, `.htaccess`, and `assets/` are directly inside the document root, not nested inside another `dist/` folder.
 5. Open the domain over HTTPS. Enable the cPanel AutoSSL certificate first if the domain does not already have HTTPS.
 

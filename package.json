@@ -1,8 +1,8 @@
 {
-  "name": "munazzami-study-planner",
+  "name": "daffa-planner",
   "version": "2.0.0",
   "private": true,
-  "description": "Arabic, local-first study planning workspace",
+  "description": "Arabic, local-first time and task planning workspace",
   "type": "module",
   "scripts": {
     "dev": "vite",

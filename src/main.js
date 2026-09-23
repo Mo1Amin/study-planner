@@ -3,7 +3,7 @@ import { addDays, dateKey, formatDuration, minutesBetween } from './domain/date.
 import { createPlannerStore, validateBackup } from './data/planner-store.js';
 import { generateStudyPlan } from './domain/planning.js';
 import { renderView } from './ui/views.js';
-import { escapeHtml, icon } from './ui/primitives.js';
+import { daffaLogo, escapeHtml, icon } from './ui/primitives.js';
 
 const NAV_ITEMS = [
   { id: 'dashboard', label: 'الرئيسية', icon: 'home' },
@@ -71,16 +71,16 @@ function render() {
   const saveLabel = savedAt ? `حُفظت بياناتك ${new Intl.DateTimeFormat('ar-EG', { hour: 'numeric', minute: '2-digit' }).format(savedAt)}` : 'حفظ تلقائي على هذا الجهاز';
 
   app.innerHTML = `<div class="app-shell">
-    <aside class="sidebar" aria-label="التنقل الرئيسي"><div class="brand"><span class="brand__mark">${icon('spark', 19)}</span><span class="brand__word">منظمي</span><small>مساحة الدراسة</small></div>
+    <aside class="sidebar" aria-label="التنقل الرئيسي"><div class="brand"><span class="brand__mark">${daffaLogo(31, 'daffa-logo--on-mark')}</span><span class="brand__word">دَفّة</span><small>خطّط يومك بوضوح</small></div>
       <p class="sidebar-label">مساحتي</p><nav class="primary-nav">${nav}</nav>
       <div class="sidebar-bottom"><div class="local-profile"><span class="profile-avatar">م</span><span><strong>مساحة شخصية</strong><small>خصوصيتك أولوية</small></span><span class="secure-dot" title="حفظ محلي"></span></div><div class="save-caption"><i class="${durableStorage ? 'is-saved' : 'is-fallback'}"></i>${saveLabel}</div></div>
     </aside>
-    <div class="app-main"><header class="topbar"><div class="topbar__identity"><span class="mobile-brand__mark">${icon('spark', 18)}</span><div><p>${escapeHtml(ROUTE_TITLES[currentView] || 'منظمي')}</p><span>خطّط بهدوء، وراجع تقدمك</span></div></div><div class="topbar__actions"><span class="today-chip">${new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'short' }).format(new Date())}</span><button class="icon-button theme-button" type="button" data-action="toggle-theme" aria-label="${state.settings.theme === 'dark' ? 'تفعيل المظهر الفاتح' : 'تفعيل المظهر الداكن'}">${icon(state.settings.theme === 'dark' ? 'sun' : 'moon', 17)}</button><button class="button button--quiet backup-shortcut" type="button" data-action="navigate" data-view="settings" aria-label="النسخ الاحتياطي والاستعادة">${icon('download', 15)}<span>نسختي</span></button></div></header>
+    <div class="app-main"><header class="topbar"><div class="topbar__identity"><span class="mobile-brand__mark">${daffaLogo(25, 'daffa-logo--on-mark')}</span><div><p>${escapeHtml(ROUTE_TITLES[currentView] || 'دَفّة')}</p><span>خطّط بهدوء، وراجع تقدمك</span></div></div><div class="topbar__actions"><span class="today-chip">${new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'short' }).format(new Date())}</span><button class="icon-button theme-button" type="button" data-action="toggle-theme" aria-label="${state.settings.theme === 'dark' ? 'تفعيل المظهر الفاتح' : 'تفعيل المظهر الداكن'}">${icon(state.settings.theme === 'dark' ? 'sun' : 'moon', 17)}</button><button class="button button--quiet backup-shortcut" type="button" data-action="navigate" data-view="settings" aria-label="النسخ الاحتياطي والاستعادة">${icon('download', 15)}<span>نسختي</span></button></div></header>
       <main id="main-content" class="page-content" tabindex="-1">${view}</main>
     </div>
     <nav class="mobile-nav" aria-label="التنقل للهاتف">${mobileNav}</nav>
     ${timerDock()}
-    <footer class="app-footer"><span>منظمي</span><span>وقتك لك، وبياناتك على جهازك.</span></footer>
+    <footer class="app-footer"><span>دَفّة</span><span>وقتك لك، وبياناتك على جهازك.</span></footer>
   </div>`;
   app.setAttribute('aria-busy', 'false');
   if (currentView === 'map') bindDragEvents();
@@ -386,12 +386,12 @@ async function handleClick(event) {
 }
 
 function downloadBackup() {
-  const backup = { ...state, exportedAt: new Date().toISOString(), app: 'Munazzami' };
+  const backup = { ...state, exportedAt: new Date().toISOString(), app: 'Daffa' };
   const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `munazzami-backup-${dateKey()}.json`;
+  link.download = `daffa-backup-${dateKey()}.json`;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   toast('تم تنزيل نسخة بياناتك. احتفظ بها في مكان آمن.');

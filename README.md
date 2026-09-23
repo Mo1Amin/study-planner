@@ -1,15 +1,15 @@
 <div align="center">
 
-# Munazzami · منظمي
+# Daffa · دَفّة
 
-**A thoughtful Arabic-first planner for study time, tasks, weekly sessions, and connected ideas.**
+**A thoughtful Arabic-first planner for time, tasks, projects, and connected ideas.**
 
 [![Frontend](https://img.shields.io/badge/HTML%20%2F%20CSS%20%2F%20JavaScript-Vite-316c61?style=flat-square)](https://vite.dev/)
 [![Storage](https://img.shields.io/badge/storage-local--first-577d99?style=flat-square)](#your-data)
 
 </div>
 
-Munazzami turns study intentions into a weekly plan that fits the hours a student actually has. It is right-to-left, responsive, and designed to work without an account or an application server.
+Daffa turns intentions into a weekly plan that fits the time you actually have. It is right-to-left, responsive, and designed to work without an account or an application server.
 
 ## What you can do
 

@@ -87,7 +87,7 @@ export function renderDashboard(state) {
 
   return `<section class="dashboard-view">
     <div class="welcome-row"><div><p class="eyebrow">${escapeHtml(new Intl.DateTimeFormat('ar-EG', { weekday: 'long' }).format(new Date()))}</p><h1>أهلًا بك في مساحة مذاكرتك</h1><p>${escapeHtml(todayDate)} · خذ يومك خطوة بخطوة.</p></div><span class="weather-mark" aria-hidden="true">${icon('spark', 20)}</span></div>
-    ${!state.subjects.length && !state.tasks.length ? `<div class="first-run-banner"><div class="first-run-banner__mark">${icon('idea', 21)}</div><div><strong>ابدأ بخطة تشبه يومك</strong><p>أضف مادة ومهمة واحدة؛ ومنظمي يرتب الباقي حول وقتك المتاح.</p></div>${button('load-demo', 'جرّب مثالًا', 'arrow', 'quiet')}</div>` : ''}
+    ${!state.subjects.length && !state.tasks.length ? `<div class="first-run-banner"><div class="first-run-banner__mark">${icon('idea', 21)}</div><div><strong>ابدأ بخطة تشبه يومك</strong><p>أضف مجالًا ومهمة واحدة؛ ودَفّة يرتب الباقي حول وقتك المتاح.</p></div>${button('load-demo', 'جرّب مثالًا', 'arrow', 'quiet')}</div>` : ''}
     <div class="metric-grid">
       ${metricCard('وقت المذاكرة اليوم', formatDuration(todayMinutes), `من هدف ${formatDuration(goal)}`, 'clock', 'teal')}
       ${metricCard('مهام قريبة', counts.dueSoon, counts.overdue ? `${counts.overdue} متأخرة` : 'خلال الأسبوع القادم', 'check', counts.overdue ? 'coral' : 'blue')}
@@ -350,7 +350,7 @@ export function renderInsights(state) {
 export function renderSettings(state, durableStorage) {
   const settings = state.settings;
   return `<section>${pageHeading('مساحتك', 'إعدادات تساعدك تستمر', 'اختر وقتًا يناسب إيقاع يومك. التعديلات تحفظ على هذا الجهاز تلقائيًا.')}
-    <div class="settings-layout"><section class="panel">${panelHeading('إيقاع المذاكرة', 'يستخدم منظمي هذه الحدود عند توزيع المهام تلقائيًا.')}
+    <div class="settings-layout"><section class="panel">${panelHeading('إيقاع يومك', 'تستخدم دَفّة هذه الحدود عند توزيع المهام تلقائيًا.')}
       <form id="settings-form" class="form-grid settings-form">
         <label class="field"><span>هدف الدراسة اليومي</span><select name="dailyGoalMinutes"><option value="60" ${settings.dailyGoalMinutes === 60 ? 'selected' : ''}>ساعة</option><option value="120" ${settings.dailyGoalMinutes === 120 ? 'selected' : ''}>ساعتان</option><option value="180" ${settings.dailyGoalMinutes === 180 ? 'selected' : ''}>3 ساعات</option><option value="240" ${settings.dailyGoalMinutes === 240 ? 'selected' : ''}>4 ساعات</option><option value="300" ${settings.dailyGoalMinutes === 300 ? 'selected' : ''}>5 ساعات</option></select></label>
         <label class="field"><span>طول جلسة التركيز</span><select name="sessionMinutes"><option value="25" ${settings.sessionMinutes === 25 ? 'selected' : ''}>25 دقيقة</option><option value="40" ${settings.sessionMinutes === 40 ? 'selected' : ''}>40 دقيقة</option><option value="50" ${settings.sessionMinutes === 50 ? 'selected' : ''}>50 دقيقة</option><option value="75" ${settings.sessionMinutes === 75 ? 'selected' : ''}>75 دقيقة</option><option value="90" ${settings.sessionMinutes === 90 ? 'selected' : ''}>90 دقيقة</option></select></label>
@@ -365,7 +365,7 @@ export function renderSettings(state, durableStorage) {
       <div class="settings-divider"></div><div class="theme-choice"><div><strong>مظهر هادئ</strong><p>اختيارك يحفظ في هذه المساحة فقط.</p></div><button class="toggle-switch ${settings.theme === 'dark' ? 'is-on' : ''}" type="button" role="switch" aria-checked="${settings.theme === 'dark'}" data-action="toggle-theme"><span></span><span class="sr-only">تغيير المظهر</span></button></div>
       <div class="settings-divider"></div><button class="text-button text-button--danger" type="button" data-action="reset-data">امسح بيانات هذه المساحة</button>
     </section></div>
-    <section class="panel tools-note"><span class="tools-note__mark">${icon('book', 19)}</span><div><strong>لا يحتاج منظمي إلى خادم PHP أو تسجيل دخول</strong><p>نسختك محفوظة على جهازك. استعمل التصدير والاستيراد لنقلها يدويًا بين الأجهزة؛ المزامنة المباشرة تحتاج خدمة خلفية وحسابًا آمنًا.</p></div></section>
+    <section class="panel tools-note"><span class="tools-note__mark">${icon('book', 19)}</span><div><strong>لا تحتاج دَفّة إلى خادم PHP أو تسجيل دخول</strong><p>نسختك محفوظة على جهازك. استعمل التصدير والاستيراد لنقلها يدويًا بين الأجهزة؛ المزامنة المباشرة تحتاج خدمة خلفية وحسابًا آمنًا.</p></div></section>
   </section>`;
 }
 
